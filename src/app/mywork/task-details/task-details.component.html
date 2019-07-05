@@ -1,0 +1,42 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit(taskForm.value)">
+ 
+  <div class="form-group">
+    <label>_id</label>
+    <input class="form-control" type="text" formControlName="_id">
+  </div>
+  <div class="form-group">
+    <label>Summary</label>
+    <input class="form-control" type="text" formControlName="summary">
+  </div>
+  <div class="form-group">
+    <label>priority</label>
+    <input class="form-control" type="text" formControlName="priority">
+  </div>
+  <div class="form-group">
+    <label>type</label>
+    <input class="form-control" type="text" formControlName="type">
+  </div>
+  <div class="form-group">
+    <label>createDate</label>
+    <input class="form-control" type="text" formControlName="createDate">
+  </div>
+  <div class="form-group">
+    <label>due</label>
+    <input class="form-control" type="text" formControlName="due">
+  </div>
+ 
+  <div class="form-group">
+    <label>modified</label>
+    <input class="form-control" type="text" formControlName="modified">
+  </div>
+  <div class="form-group">
+    <label>key</label>
+    <input class="form-control" type="text" formControlName="key">
+  </div>
+  <div class="form-group">
+  <button class="button" type="submit">Submit</button>
+  </div>
+  
+</form>
+<!-- {{taskDetail|json}} -->
+

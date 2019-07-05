@@ -1,0 +1,22 @@
+<table class="table table-sm table-striped table-hover" style="font-size:14px;">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">User</th>
+      <th scope="col">Issue</th>
+      <th scope="col">Description</th>
+      <th scope="col">Worked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let data of workLogs; let i = index">
+      <th>{{data.started | date:'fullDate' }}</th>
+      <td>{{data.updateAuthor.displayName}}</td>
+      <td>{{data.issueId}}</td>
+      <td>{{data.comment}}</td>
+      <td>{{data.timeSpent}}</td>
+    </tr>
+  </tbody>
+</table>
+{{workLogs|json}}

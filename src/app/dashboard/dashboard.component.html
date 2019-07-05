@@ -1,0 +1,40 @@
+<table class="table table-sm table-striped table-hover" style="font-size:14px;">
+  <thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Key</th>
+      <th scope="col">Summary</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Status</th>
+      <th scope="col">Time Spent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let data of ticketsLists; let i = index"
+      [routerLink]="['/ticket', data.key]"
+      [title]="data.key + ' work logs'" >
+      <th>
+        <img
+          src="{{ data.fields.issuetype.iconUrl }}"
+          alt="{{ data.fields.issuetype.name }}"
+          title="{{ data.fields.issuetype.name }}"
+          width="16"
+        />
+      </th>
+      <td>{{ data.key }}</td>
+      <td>{{ data.fields.summary }}</td>
+      <td>
+        <img
+          src="{{ data.fields.priority.iconUrl }}"
+          alt="{{ data.fields.priority.name }}"
+          title="{{ data.fields.priority.name }}"
+          width="16"
+        />
+      </td>
+      <td>{{data.fields.status.name}}</td>
+      <td>{{ (data.fields.timespent/60)/60  }}</td>
+    </tr>
+  </tbody>
+</table>
+{{ ticketsLists | json }}
